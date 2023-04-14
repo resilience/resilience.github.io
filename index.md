@@ -37,7 +37,15 @@ body {
   </p>
 
   <p class="intro-text">
-    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect and unlock the power of data together!
+    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect and unlock the power of data together and build a data stack that your org can be confident about!
+  </p>
+  
+  <p class="intro-text">
+    My Main Focus Points:
+    <ul>
+    <li>To Rapidly Implement a Modern Data Stack to ensure True Self-Service Analytics</li>
+    <li>To Streamline the analytics request process and the data integration & modeling processes within your org</li>
+    <li>To make you really OWN your data & drive true confidence (and peace of mind) in your data & data collection integrity</li>
   </p>
   
   
