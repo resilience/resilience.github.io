@@ -1,6 +1,6 @@
 ### Articles
 
-https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1
+[A Data Team Code Review Practitioner’s Guide](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)
 
 
 ---
