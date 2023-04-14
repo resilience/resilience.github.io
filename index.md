@@ -1,7 +1,7 @@
 ### Articles
 
 [A Data Team Code Review Practitioner’s Guide](/sample_page)
-<a href="[https://github.com/evanca/quick-portfolio](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)">A Data Team Code Review Practitioner’s Guide</a>
+<a href="[https://github.com/evanca/quick-portfolio](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)"></a>
 
 ---
 [Project 2 Title](/pdf/sample_presentation.pdf)
