@@ -5,6 +5,13 @@
 body {
   font-family: Arial, sans-serif;
 }
+  
+.intro-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
 
 .articles-section {
   font-family: 'Roboto', sans-serif;
@@ -25,7 +32,15 @@ body {
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
+<p class="intro-text">
+    As an experienced Data Practitioner with a focus on collaboration between product managers and engineering teams, I've spent over five years building data teams across the globe. My comprehensive experience in the data spectrum, including roles such as Principal Data Scientist and Senior Analytics Engineer, has enabled me to become the nervous system for companies in matters related to data, automation, and AI. I thrive on driving change and improvement across departments with my keen attention to detail and a deep understanding of the balance between delivering results promptly and achieving perfection.
+  </p>
 
+  <p class="intro-text">
+    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect and unlock the power of data together!
+  </p>
+  
+  
 <h2 class="articles-section">Articles</h2>
 <div class="articles-section">
   <ul>
