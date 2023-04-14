@@ -15,13 +15,6 @@
 [Setting up Virtual Environments with dbt (data build tool ) on Mac and Windows](/sample_page)
 <a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1"></a>
 
----
-
-
----
-
-
-
 
 ---
 <p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
