@@ -4,22 +4,19 @@
 <a href="[https://github.com/evanca/quick-portfolio](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)"></a>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[The Rise of the Full Stack Data Role: The One-Stop Solution to Propel Your Data Stack from 0 to 1](/sample_page)
+<a href="https://medium.com/@donovanmaree/the-rise-of-the-full-stack-data-role-the-one-stop-solution-to-propel-your-data-stack-from-0-to-1-ae6c80591df2"></a>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Blockchain Technology for Improved Transparency in Government Tenders](/sample_page)
+<a href="https://medium.com/@donovanmaree/blockchain-technology-for-improved-transparency-in-government-tenders-eb656a88d177"></a>
+
+---
+[Setting up Virtual Environments with dbt (data build tool ) on Mac and Windows](/sample_page)
+<a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1"></a>
 
 ---
 
-### 
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
 
 ---
 
