@@ -41,12 +41,16 @@ body {
   </p>
   
   <p class="intro-text">
-    My Main Focus Points:
+    <h2 class="articles-section">My Main Focus Points:</h2>
+  <div class="articles-section">
     <ul>
     <li>To Rapidly Implement a Modern Data Stack to ensure True Self-Service Analytics</li>
     <li>To Streamline the analytics request process and the data integration & modeling processes within your org</li>
     <li>To empower you to OWN your data & drive true confidence (and peace of mind) in your data & data collection integrity</li>
+    </ul>
+    </div>
   </p>
+  
   
   
 <h2 class="articles-section">Articles</h2>
