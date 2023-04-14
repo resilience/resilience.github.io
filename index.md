@@ -1,7 +1,7 @@
 ### Articles
 
-[A Data Team Code Review Practitioner’s Guide](/sample_page)
-<a href="[https://github.com/evanca/quick-portfolio](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)"></a>
+[A Data Team Code Review Practitioner’s Guide](/<a href="[https://github.com/evanca/quick-portfolio](https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1)"></a>)
+
 
 ---
 [The Rise of the Full Stack Data Role: The One-Stop Solution to Propel Your Data Stack from 0 to 1](/sample_page)
