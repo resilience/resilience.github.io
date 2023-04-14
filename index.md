@@ -51,10 +51,10 @@ body {
   </ul>
   
  <h2 class="articles-section">My Automated T-Shirt Store</h2>
-  <a href="https://www.nova.co.za">nova - quirky anime | gaming | cult tees</a></li>
+  <a href="https://www.nova.co.za">nova - quirky anime | gaming | cult tees</a>
   
  <h2 class="articles-section">Play a Game of Chess against me?</h2>
-  <a href="https://play.chess.com/MPzvo">Challenge me on Chess.com!</a></li>
+  <a href="https://play.chess.com/MPzvo">Challenge me on Chess.com!</a>
   
 
 </div>
