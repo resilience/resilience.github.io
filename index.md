@@ -50,11 +50,11 @@ body {
     <li><a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1">Setting up Virtual Environments with dbt (data build tool) on Mac and Windows</a></li>
   </ul>
   
- <h2 class="articles-section">My Automated T-Shirt Store</h2>
+ <h2 class="articles-section">Checkout My Automated T-Shirt Store</h2>
   <a href="https://www.nova.co.za">nova - quirky anime | gaming | cult tees</a>
   
- <h2 class="articles-section">Play a Game of Chess against me?</h2>
-  <a href="https://play.chess.com/MPzvo">Challenge me on Chess.com!</a>
+ <h2 class="articles-section">Or Play a Game of Chess against me.</h2>
+  <a href="https://play.chess.com/MPzvo">Challenge me here.</a>
   
 
 </div>
