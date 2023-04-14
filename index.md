@@ -49,4 +49,11 @@ body {
     <li><a href="https://medium.com/@donovanmaree/blockchain-technology-for-improved-transparency-in-government-tenders-eb656a88d177">Blockchain Technology for Improved Transparency in Government Tenders</a></li>
     <li><a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1">Setting up Virtual Environments with dbt (data build tool) on Mac and Windows</a></li>
   </ul>
+  
+ <h2 class="articles-section">My Automated T-Shirt Store</h2>
+  <a href="https://www.nova.co.za">nova - quirky anime | gaming | cult tees</a></li>
+
 </div>
+
+  
+ 
