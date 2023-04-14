@@ -56,6 +56,7 @@ body {
 <h2 class="articles-section">Articles</h2>
 <div class="articles-section">
   <ul>
+    <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
     <li><a href="https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1">A Data Team Code Review Practitioner’s Guide</a></li>
     <li><a href="https://medium.com/@donovanmaree/the-rise-of-the-full-stack-data-role-the-one-stop-solution-to-propel-your-data-stack-from-0-to-1-ae6c80591df2">The Rise of the Full Stack Data Role: The One-Stop Solution to Propel Your Data Stack from 0 to 1</a></li>
     <li><a href="https://medium.com/@donovanmaree/blockchain-technology-for-improved-transparency-in-government-tenders-eb656a88d177">Blockchain Technology for Improved Transparency in Government Tenders</a></li>
