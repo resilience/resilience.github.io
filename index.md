@@ -33,11 +33,10 @@ body {
 </head>
 <body>
 <p class="intro-text">
-    As an experienced Data Practitioner with a focus on collaboration between product managers and engineering teams, I've spent over five years building data teams across the globe. My comprehensive experience in the data spectrum, including roles such as Principal Data Scientist and Senior Analytics Engineer, has enabled me to become the nervous system for companies in matters related to data, automation, and AI. I thrive on driving change and improvement across departments with my keen attention to detail and a deep understanding of the balance between delivering results promptly and achieving perfection.
-  </p>
+    As an experienced Data Practitioner with a focus on collaboration between product managers and engineering teams, I've spent over six years building data teams across the globe. My comprehensive experience in the data spectrum, including roles such as Principal Data Scientist and Senior Analytics Engineer, has enabled me to become the nervous system for companies in matters related to data, automation, and AI. I thrive on driving change and improvement across departments with my keen attention to detail and a deep understanding of the balance between delivering results promptly and achieving perfection. I have learnt virtually every data tool, SQL dialet and DB technology that exists and can use and improve any system or process I get exposed to because of my wide field of expertise - I am to be a savvant at every technology in the data stack.
 
   <p class="intro-text">
-    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect and unlock the power of data together and build a data stack that your org can be confident about!
+    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect if you want to unlock the power of your data or need to build a data stack that your org can be openly confident about!
   </p>
   
   <p class="intro-text">
@@ -53,7 +52,7 @@ body {
   
   
   
-<h2 class="articles-section">Articles</h2>
+<h2 class="articles-section">Articles I have Authored</h2>
 <div class="articles-section">
   <ul>
     <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
