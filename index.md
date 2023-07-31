@@ -69,15 +69,7 @@ body {
   <a href="https://play.chess.com/MPzvo">Challenge me here.</a>
 
 
-<h2 class="articles-section">How I see myself in more colourful language:</h2>
-<p class="intro-text">
- Like a polymorphic goo, I have absorbed every company I have joined, to learn the ins and outs of each companies integration with data, and through data understand the rubric of each department deeply, which decisions made impact and which decisions needed more refinement and which questions were never asked. 
 
-I have deep dived into each department to build up a mental model of what the best data function and data adoption looks like. In my very first position I negotiated a starting salary with a sliding scale based on my performance and within a month I 18X'd my starting salary, and at 3 months I was offered 30% of the company and the oppurtunity to start a sister company as the CTO. 
-
-This was the start of my journey. Mixing my negotiation skills with my own brand of tenacious focus I have honed my ability to spot and predict bottlenecks and leverage points before contracts are even signed. I read the fine print in all interactions I have, from vendor contract negotations to marketing decisions, as often it is the most glossed over areas that yield the most effective change. My passion is to provide value where it matters most.
-  </p>
-  
 
 </div>
 
