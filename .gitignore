@@ -1,0 +1,4 @@
+# Ignore contents of readmes folder from being tracked
+/readmes/*
+!/readmes/.gitkeep
+!/readmes/**/README.md

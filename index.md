@@ -32,46 +32,68 @@ body {
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-<p class="intro-text">
-    As an experienced Data Practitioner with a focus on collaboration between product managers and engineering teams, I've spent over six years building data teams across the globe. My comprehensive experience in the data spectrum, including roles such as Principal Data Scientist and Senior Analytics Engineer, has enabled me to become the nervous system for companies in matters related to data, automation, and AI. I thrive on driving change and improvement across departments with my keen attention to detail and a deep understanding of the balance between delivering results promptly and achieving perfection. I have learnt virtually every data tool, SQL dialet and DB technology that exists and can use and improve any system or process I get exposed to because of my wide field of expertise - I aim to be a savant at every technology and tool in the data stack.
+  <section class="intro-text">
+    <h2>Building pragmatic AI and data platforms</h2>
+    <p>
+      I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
+    </p>
+  </section>
 
-  <p class="intro-text">
-    My passion lies in developing state-of-the-art data infrastructure and guiding talented data teams to achieve their full potential. By fostering collaboration and innovation, I believe we can create data-driven solutions that truly stand out in the global market. My experience informs every new project I undertake, and I'm always eager to tackle new challenges and explore opportunities for growth. Let's connect if you want to unlock the power of your data or need to build a data stack that your org can be openly confident about!
-  </p>
-  
-  <p class="intro-text">
-    <h2 class="articles-section">My Main Focus Points:</h2>
+  <h2 class="articles-section">What I focus on</h2>
   <div class="articles-section">
     <ul>
-    <li>To Rapidly Implement a Modern Data Stack to ensure True Self-Service Analytics</li>
-    <li>To Streamline the analytics request process and the data integration & modeling processes within your org</li>
-    <li>To empower you to OWN your data & drive true confidence (and peace of mind) in your data & data collection integrity</li>
+      <li>Agentic systems: planning, tool-use, evaluation, and guardrails</li>
+      <li>Retrieval-Augmented Generation: ingestion, chunking, embeddings, grounding, and attribution</li>
+      <li>Data platforms: secure multi-tenant foundations, CI/CD, IaC, and monitoring</li>
+      <li>ML foundations: Rust/Python hybrid performance, lineage, MLflow + PostgreSQL observability</li>
     </ul>
-    </div>
-  </p>
-  
-  
-  
-<h2 class="articles-section">Articles I have Authored</h2>
-<div class="articles-section">
-  <ul>
-    <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
-    <li><a href="https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1">A Data Team Code Review Practitioner’s Guide</a></li>
-    <li><a href="https://medium.com/@donovanmaree/the-rise-of-the-full-stack-data-role-the-one-stop-solution-to-propel-your-data-stack-from-0-to-1-ae6c80591df2">The Rise of the Full Stack Data Role: The One-Stop Solution to Propel Your Data Stack from 0 to 1</a></li>
-    <li><a href="https://medium.com/@donovanmaree/blockchain-technology-for-improved-transparency-in-government-tenders-eb656a88d177">Blockchain Technology for Improved Transparency in Government Tenders</a></li>
-    <li><a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1">Setting up Virtual Environments with dbt (data build tool) on Mac and Windows</a></li>
-  </ul>
-  
- <h2 class="articles-section">Checkout My Automated T-Shirt Store</h2>
-  <a href="https://www.nova.co.za">nova - quirky anime | gaming | cult tees</a>
-  
- <h2 class="articles-section">Or Play a Game of Chess against me.</h2>
-  <a href="https://play.chess.com/MPzvo">Challenge me here.</a>
+  </div>
 
+  <h2 class="articles-section">Project snapshots</h2>
+  <div class="articles-section">
+    <h3>Alter SaaS — LLM Support Agent (Enterprise)</h3>
+    <p>
+      Multi-tenant support agent that blends Slack/Teams context, code, and docs with strict privacy. Thread-aware, source-attributed answers, configurable knowledge, and SOC2-ready posture.
+    </p>
+    <p><strong>Stack:</strong> LangChain/LangGraph, BAML, FastAPI, Next.js 14, LangSmith, DeepEval, LlamaIndex, Context7. Infra: PostgreSQL, Qdrant/Weaviate, Redis, MinIO/S3, Kubernetes, Terraform.</p>
 
+    <h3>LaunchData — Data Stack Builder (IDP)</h3>
+    <p>
+      Internal Developer Platform to deploy client-specific modern data stacks in their cloud. Services include API Gateway, Config, Deployment, and Client management with secure defaults.
+    </p>
+    <p><strong>Stack:</strong> Docker Compose, PostgreSQL, Redis, JWT, Prometheus/Grafana, centralized logging, health checks, Trivy in CI/CD.</p>
 
+    <h3>System 3 — Foundational ML Framework</h3>
+    <p>
+      Ground-up rebuild around metadata-driven design. Eight clear subsystems (feature engineering, TiDE forecasting, probabilistic loss, adaptive learning, ensembles, AutoML, NAS, realtime serving) with explicit contracts and zero-fallback policy.
+    </p>
+    <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
+  </div>
 
-</div>
+  <h2 class="articles-section">How I build data teams</h2>
+  <div class="articles-section">
+    <ul>
+      <li>Start with strong foundations: environments, CI/CD, observability, and clear data contracts</li>
+      <li>Ship value early with thin vertical slices; expand safely via templates and guardrails</li>
+      <li>Make work inspectable: docs by default, ADRs, and automated runbooks</li>
+      <li>Keep it boring where it matters; use advanced techniques only when they de-risk</li>
+    </ul>
+  </div>
 
-  
- 
+  <h2 class="articles-section">Selected writing</h2>
+  <div class="articles-section">
+    <ul>
+      <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
+      <li><a href="https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1">A Data Team Code Review Practitioner’s Guide</a></li>
+      <li><a href="https://medium.com/@donovanmaree/the-rise-of-the-full-stack-data-role-the-one-stop-solution-to-propel-your-data-stack-from-0-to-1-ae6c80591df2">The Rise of the Full Stack Data Role</a></li>
+      <li><a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1">Setting up virtual environments with dbt</a></li>
+    </ul>
+  </div>
+
+  <div class="articles-section">
+    <p>
+      Want to talk platforms, agentic systems, or RAG? Reach me at <a href="mailto:dmaree2@gmail.com">dmaree2@gmail.com</a> or on <a href="https://www.linkedin.com/in/donovan-maree-90452776/">LinkedIn</a>.
+    </p>
+  </div>
+</body>
+</html>
