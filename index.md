@@ -163,13 +163,7 @@ layout: null
   .badges { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--card-stroke); background: rgba(255,255,255,0.04); color: var(--muted); }
   .orb {
-    width: 280px; height: 280px; border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, rgba(167,139,250,0.9), rgba(96,165,250,0.6) 40%, rgba(52,211,153,0.6) 70%, transparent 72%),
-                radial-gradient(circle at 70% 70%, rgba(96,165,250,0.6), rgba(17,24,39,0.6) 50%);
-    filter: blur(0.2px) saturate(120%);
-    box-shadow: inset 0 0 40px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.35);
-    margin: 0 auto;
-    animation: float 9s ease-in-out infinite;
+    width: 300px; height: 300px; margin: 0 auto; display: block;
   }
 
   .section-title { scroll-margin-top: 80px; }
@@ -178,6 +172,36 @@ layout: null
 
   footer.site-footer { border-top: 1px solid var(--card-stroke); background: rgba(0,0,0,0.2); }
   footer .container { padding: 18px 20px; }
+
+  /* Subtle 2025-style micro-interactions */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .shimmer-text {
+    background: linear-gradient(100deg, rgba(255,255,255,0.15), rgba(255,255,255,0.75), rgba(255,255,255,0.15));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    background-size: 200% 100%;
+    animation: shimmer 6s ease-in-out infinite;
+  }
+  .hero { position: relative; overflow: hidden; }
+  .cursor-glow { position: absolute; top: 0; left: 0; width: 220px; height: 220px; border-radius: 50%; pointer-events: none; opacity: 0.0; mix-blend-mode: screen;
+    background: radial-gradient(closest-side, rgba(96,165,250,0.25), rgba(167,139,250,0.15) 40%, rgba(17,24,39,0.0) 75%);
+    transform: translate3d(-50%, -50%, 0);
+    transition: opacity .25s ease;
+  }
+  .hero:hover .cursor-glow { opacity: 1; }
+
+  /* Project styling upgrades */
+  .projects .project { position: relative; padding: 14px 16px 10px 18px; border: 1px solid var(--card-stroke); border-radius: 12px; margin: 14px 0; background: rgba(255,255,255,0.03); }
+  .projects .project::before { content: ""; position: absolute; left: 8px; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--brand), var(--brand-2)); box-shadow: 0 0 10px rgba(96,165,250,0.55); }
+  .projects .project:hover { box-shadow: 0 10px 24px rgba(0,0,0,0.28); transform: translateY(-1px); transition: box-shadow .25s ease, transform .25s ease; }
+  .projects h3 { display: inline-block; padding-right: 8px; background-image: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(167,139,250,0.35)); background-repeat: no-repeat; background-size: 100% 8px; background-position: 0 100%; border-radius: 4px; }
+  .projects p strong { color: #cbd5e1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer-text, .cursor-glow { animation: none !important; transition: none !important; }
+  }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -203,7 +227,7 @@ layout: null
     <div class="hero-grid">
       <div class="hero-left">
         <div class="eyebrow">Agents • DataOps • ML Platforms</div>
-        <h1>Building pragmatic AI and data platforms</h1>
+        <h1 class="shimmer-text">Building pragmatic AI and data platforms</h1>
         <p class="lead">
           I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
         </p>
@@ -219,9 +243,36 @@ layout: null
         </div>
       </div>
       <div class="hero-right">
-        <div class="orb" aria-hidden="true"></div>
+        <svg class="orb" viewBox="0 0 300 300" aria-hidden="true" role="img">
+          <defs>
+            <radialGradient id="orbGrad" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="rgba(167,139,250,1)"/>
+              <stop offset="45%" stop-color="rgba(96,165,250,0.9)"/>
+              <stop offset="78%" stop-color="rgba(52,211,153,0.6)"/>
+              <stop offset="100%" stop-color="rgba(17,24,39,0.0)"/>
+            </radialGradient>
+            <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="2" seed="5" result="noise">
+                <animate attributeName="seed" from="5" to="95" dur="16s" repeatCount="indefinite"/>
+                <animate attributeName="baseFrequency" values="0.006;0.011;0.007;0.006" dur="18s" repeatCount="indefinite"/>
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G">
+                <animate attributeName="scale" values="14;22;16;14" dur="20s" repeatCount="indefinite"/>
+              </feDisplacementMap>
+            </filter>
+          </defs>
+          <g filter="url(#liquid)">
+            <circle cx="150" cy="150" r="130" fill="url(#orbGrad)">
+              <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" dur="38s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="115" cy="115" r="38" fill="rgba(255,255,255,0.12)">
+              <animate attributeName="opacity" values="0.06;0.18;0.08;0.06" dur="12s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </svg>
       </div>
     </div>
+    <span class="cursor-glow" aria-hidden="true"></span>
   </section>
 
   <h2 id="focus" class="articles-section section-title">What I focus on</h2>
@@ -235,24 +286,30 @@ layout: null
   </div>
 
   <h2 id="projects" class="articles-section section-title">Project snapshots</h2>
-  <div class="articles-section card">
-    <h3>Alter SaaS — LLM Support Agent (Enterprise)</h3>
-    <p>
-      Multi-tenant support agent that blends Slack/Teams context, code, and docs with strict privacy. Thread-aware, source-attributed answers, configurable knowledge, and SOC2-ready posture.
-    </p>
-    <p><strong>Stack:</strong> LangChain/LangGraph, BAML, FastAPI, Next.js 14, LangSmith, DeepEval, LlamaIndex, Context7. Infra: PostgreSQL, Qdrant/Weaviate, Redis, MinIO/S3, Kubernetes, Terraform.</p>
+  <div class="articles-section card projects">
+    <div class="project">
+      <h3>Alter SaaS — LLM Support Agent (Enterprise)</h3>
+      <p>
+        Multi-tenant support agent that blends Slack/Teams context, code, and docs with strict privacy. Thread-aware, source-attributed answers, configurable knowledge, and SOC2-ready posture.
+      </p>
+      <p><strong>Stack:</strong> LangChain/LangGraph, BAML, FastAPI, Next.js 14, LangSmith, DeepEval, LlamaIndex, Context7. Infra: PostgreSQL, Qdrant/Weaviate, Redis, MinIO/S3, Kubernetes, Terraform.</p>
+    </div>
 
-    <h3>LaunchData — Data Stack Builder (IDP)</h3>
-    <p>
-      Internal Developer Platform to deploy client-specific modern data stacks in their cloud. Services include API Gateway, Config, Deployment, and Client management with secure defaults.
-    </p>
-    <p><strong>Stack:</strong> Docker Compose, PostgreSQL, Redis, JWT, Prometheus/Grafana, centralized logging, health checks, Trivy in CI/CD.</p>
+    <div class="project">
+      <h3>LaunchData — Data Stack Builder (IDP)</h3>
+      <p>
+        Internal Developer Platform to deploy client-specific modern data stacks in their cloud. Services include API Gateway, Config, Deployment, and Client management with secure defaults.
+      </p>
+      <p><strong>Stack:</strong> Docker Compose, PostgreSQL, Redis, JWT, Prometheus/Grafana, centralized logging, health checks, Trivy in CI/CD.</p>
+    </div>
 
-    <h3>System 3 — Foundational ML Framework</h3>
-    <p>
-      Autonomous ML platform that pairs LLM agents with robust data stacks. It performs automatic feature discovery, self-optimizing hyperparameter/architecture search, continuous drift detection, and performance tuning. System 3 integrates cleanly with LaunchData (provisioning/infra) and Alter (knowledge/agents) to move from data to decisions with minimal human glue.
-    </p>
-    <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
+    <div class="project">
+      <h3>System 3 — Foundational ML Framework</h3>
+      <p>
+        Autonomous ML platform that pairs LLM agents with robust data stacks. It performs automatic feature discovery, self-optimizing hyperparameter/architecture search, continuous drift detection, and performance tuning. System 3 integrates cleanly with LaunchData (provisioning/infra) and Alter (knowledge/agents) to move from data to decisions with minimal human glue.
+      </p>
+      <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
+    </div>
   </div>
 
   <h2 id="core" class="articles-section section-title">Core analytics and data engineering</h2>
@@ -301,6 +358,7 @@ layout: null
     <div class="hero-ctas" style="justify-content:center;">
       <a class="btn primary" href="mailto:dmaree2@gmail.com">Email me</a>
       <a class="btn" href="https://www.linkedin.com/in/donovan-maree-90452776/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.producthunt.com/@donovandata" target="_blank" rel="noopener">Product Hunt</a>
     </div>
   </div>
 
@@ -312,7 +370,29 @@ layout: null
     </div>
   </footer>
   <script>
-    (function(){ var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+    (function(){
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+      // Cursor-reactive glow inside hero (no parallax, pointer only)
+      var hero = document.querySelector('.hero');
+      var glow = document.querySelector('.cursor-glow');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (hero && glow && !reduce) {
+        var rafId = null, targetX = 0, targetY = 0, curX = 0, curY = 0;
+        hero.addEventListener('pointermove', function(e){
+          var rect = hero.getBoundingClientRect();
+          targetX = e.clientX - rect.left; targetY = e.clientY - rect.top;
+          if (!rafId) rafId = requestAnimationFrame(tick);
+        });
+        hero.addEventListener('pointerleave', function(){ glow.style.opacity = '0'; });
+        hero.addEventListener('pointerenter', function(){ glow.style.opacity = '1'; });
+        function tick(){
+          curX += (targetX - curX) * 0.18; curY += (targetY - curY) * 0.18;
+          glow.style.transform = 'translate3d(' + (curX) + 'px,' + (curY) + 'px,0) translate(-50%,-50%)';
+          rafId = (Math.abs(targetX - curX) > 0.5 || Math.abs(targetY - curY) > 0.5) ? requestAnimationFrame(tick) : null;
+        }
+      }
+    })();
   </script>
 </body>
 </html>
