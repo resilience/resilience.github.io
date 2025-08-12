@@ -1,5 +1,4 @@
----
-layout: none
+layout: null
 ---
 <html>
 <head>
