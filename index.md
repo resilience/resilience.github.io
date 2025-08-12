@@ -131,20 +131,100 @@ layout: null
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
   }
+
+  /* --- New UI: Header, Hero, Buttons, Badges, Footer --- */
+  .skip-link {
+    position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+  }
+  .skip-link:focus { left: 16px; top: 16px; width: auto; height: auto; padding: 8px 12px; background: #111827; color: #fff; border-radius: 8px; z-index: 1000; border: 1px solid var(--card-stroke); }
+
+  header.site-header {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgba(17,24,39,0.85), rgba(17,24,39,0.65));
+    border-bottom: 1px solid var(--card-stroke);
+  }
+  .nav-wrap { max-width: 980px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: "Space Grotesk", ui-sans-serif, system-ui; font-weight: 700; letter-spacing: 0.2px; font-size: 18px; background: linear-gradient(90deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  nav a { color: var(--text); text-decoration: none; margin-left: 14px; font-size: 14px; opacity: 0.9; }
+  nav a:hover { color: #fff; opacity: 1; }
+
+  .hero { padding: 34px 28px; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; }
+  @media (max-width: 840px) { .hero-grid { grid-template-columns: 1fr; } }
+  .eyebrow { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 1.1px; }
+  h1 { font-family: "Space Grotesk", ui-sans-serif, system-ui; font-weight: 800; letter-spacing: 0.2px; font-size: 34px; margin: 10px 0 12px; }
+  .lead { font-size: 18px; line-height: 1.8; }
+  .hero-ctas { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--card-stroke); color: var(--text); text-decoration: none; background: rgba(255,255,255,0.03); }
+  .btn:hover { background: rgba(255,255,255,0.06); }
+  .btn.primary { background: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(167,139,250,0.35)); border-color: transparent; }
+  .btn.primary:hover { background: linear-gradient(90deg, rgba(96,165,250,0.5), rgba(167,139,250,0.5)); }
+  .badges { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--card-stroke); background: rgba(255,255,255,0.04); color: var(--muted); }
+  .orb {
+    width: 280px; height: 280px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(167,139,250,0.9), rgba(96,165,250,0.6) 40%, rgba(52,211,153,0.6) 70%, transparent 72%),
+                radial-gradient(circle at 70% 70%, rgba(96,165,250,0.6), rgba(17,24,39,0.6) 50%);
+    filter: blur(0.2px) saturate(120%);
+    box-shadow: inset 0 0 40px rgba(255,255,255,0.15), 0 20px 60px rgba(0,0,0,0.35);
+    margin: 0 auto;
+    animation: float 9s ease-in-out infinite;
+  }
+
+  .section-title { scroll-margin-top: 80px; }
+  .contact-cta { text-align: center; }
+  .contact-cta .btn { justify-content: center; min-width: 160px; }
+
+  footer.site-footer { border-top: 1px solid var(--card-stroke); background: rgba(0,0,0,0.2); }
+  footer .container { padding: 18px 20px; }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <div class="brand">Agentic Data Platforms</div>
+      <nav>
+        <a href="#focus">Focus</a>
+        <a href="#projects">Projects</a>
+        <a href="#core">Core</a>
+        <a href="#teams">Teams</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
   <div class="container">
-  <section class="intro-text hero card">
-    <h2>Building pragmatic AI and data platforms</h2>
-    <p>
-      I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
-    </p>
+  <section class="hero card">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow">Agents • DataOps • ML Platforms</div>
+        <h1>Building pragmatic AI and data platforms</h1>
+        <p class="lead">
+          I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="mailto:dmaree2@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/donovan-maree-90452776/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Agentic systems</span>
+          <span class="badge">RAG</span>
+          <span class="badge">Data platforms</span>
+          <span class="badge">Observability</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="orb" aria-hidden="true"></div>
+      </div>
+    </div>
   </section>
 
-  <h2 class="articles-section">What I focus on</h2>
+  <h2 id="focus" class="articles-section section-title">What I focus on</h2>
   <div class="articles-section card">
     <ul>
       <li>Agentic systems: planning, tool-use, evaluation, and guardrails</li>
@@ -154,7 +234,7 @@ layout: null
     </ul>
   </div>
 
-  <h2 class="articles-section">Project snapshots</h2>
+  <h2 id="projects" class="articles-section section-title">Project snapshots</h2>
   <div class="articles-section card">
     <h3>Alter SaaS — LLM Support Agent (Enterprise)</h3>
     <p>
@@ -175,7 +255,7 @@ layout: null
     <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
   </div>
 
-  <h2 class="articles-section">Core analytics and data engineering</h2>
+  <h2 id="core" class="articles-section section-title">Core analytics and data engineering</h2>
   <div class="articles-section card">
     <p><em>(Separate from platform projects)</em></p>
     <ul>
@@ -194,7 +274,7 @@ layout: null
     </ul>
   </div>
 
-  <h2 class="articles-section">How I build data teams</h2>
+  <h2 id="teams" class="articles-section section-title">How I build data teams</h2>
   <div class="articles-section card">
     <ul>
       <li>Start with strong foundations: environments, CI/CD, observability, and clear data contracts</li>
@@ -204,7 +284,7 @@ layout: null
     </ul>
   </div>
 
-  <h2 class="articles-section">Selected writing</h2>
+  <h2 id="writing" class="articles-section section-title">Selected writing</h2>
   <div class="articles-section card">
     <ul>
       <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
@@ -214,10 +294,25 @@ layout: null
     </ul>
   </div>
 
-  <div class="articles-section">
+  <div id="contact" class="articles-section card contact-cta">
     <p>
-      Want to talk platforms, agentic systems, or RAG? Reach me at <a href="mailto:dmaree2@gmail.com">dmaree2@gmail.com</a> or on <a href="https://www.linkedin.com/in/donovan-maree-90452776/">LinkedIn</a>.
+      Want to talk platforms, agentic systems, or RAG?
     </p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a class="btn primary" href="mailto:dmaree2@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/donovan-maree-90452776/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
+
+  </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> — Built with pragmatic AI + data platform patterns.</span>
+    </div>
+  </footer>
+  <script>
+    (function(){ var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+  </script>
 </body>
 </html>
