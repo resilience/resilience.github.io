@@ -1,38 +1,118 @@
-
 <html>
 <head>
-<style>
-body {
-  font-family: Arial, sans-serif;
-}
-  
-.intro-text {
-  font-family: 'Arial', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+  <style>
+  :root {
+    --bg-start: #0b0f17;
+    --bg-end: #111827;
+    --card-bg: rgba(255,255,255,0.06);
+    --card-stroke: rgba(255,255,255,0.12);
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --brand: #60a5fa;   /* blue-400 */
+    --brand-2: #a78bfa; /* violet-400 */
+    --accent: #34d399;  /* teal/emerald */
+  }
 
-.articles-section {
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
-  line-height: 2;
-}
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0px); }
+  }
 
-.articles-section a {
-  color: #1a73e8;
-  text-decoration: none;
-}
+  html { box-sizing: border-box; }
+  *, *:before, *:after { box-sizing: inherit; }
 
-.articles-section a:hover {
-  text-decoration: underline;
-}
+  body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: var(--text);
+    background: radial-gradient(1200px 800px at 10% -10%, rgba(96,165,250,0.15), transparent),
+                radial-gradient(1200px 800px at 90% 10%, rgba(167,139,250,0.12), transparent),
+                linear-gradient(180deg, var(--bg-start), var(--bg-end));
+    background-attachment: fixed;
+  }
 
-</style>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  .hero {
+    position: relative;
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: linear-gradient(120deg, rgba(96,165,250,0.15), rgba(52,211,153,0.12) 60%, rgba(167,139,250,0.12));
+    border: 1px solid var(--card-stroke);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    animation: float 9s ease-in-out infinite;
+  }
+
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  h2 {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    font-size: 28px;
+    margin: 26px 0 14px;
+    background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  h3 {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui;
+    font-weight: 600;
+    margin: 18px 0 6px;
+  }
+
+  .card {
+    background: backdrop-filter(blur(10px)) var(--card-bg);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--card-stroke);
+    border-radius: 14px;
+    padding: 18px 18px 14px;
+    margin: 14px 0 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  }
+
+  .articles-section {
+    font-size: 18px;
+    line-height: 1.9;
+  }
+
+  .articles-section a {
+    color: var(--brand);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(96,165,250,0.4);
+  }
+
+  .articles-section a:hover {
+    color: #93c5fd;
+    border-bottom-color: rgba(96,165,250,0.7);
+  }
+
+  ul { padding-left: 20px; }
+  li { margin: 6px 0; color: var(--text); }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+    margin: 28px 0;
+  }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <section class="intro-text">
+  <div class="container">
+  <section class="intro-text hero card">
     <h2>Building pragmatic AI and data platforms</h2>
     <p>
       I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
@@ -40,7 +120,7 @@ body {
   </section>
 
   <h2 class="articles-section">What I focus on</h2>
-  <div class="articles-section">
+  <div class="articles-section card">
     <ul>
       <li>Agentic systems: planning, tool-use, evaluation, and guardrails</li>
       <li>Retrieval-Augmented Generation: ingestion, chunking, embeddings, grounding, and attribution</li>
