@@ -1,4 +1,4 @@
----
+  ---
 layout: null
 ---
 <html>
@@ -122,10 +122,10 @@ layout: null
   .card:nth-of-type(4) { animation-delay: .18s; }
   .card:nth-of-type(5) { animation-delay: .24s; }
 
-  /* Bullets */
-  .articles-section ul { list-style: none; padding-left: 0; }
-  .articles-section li { position: relative; padding-left: 22px; }
-  .articles-section li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--brand), var(--brand-2)); box-shadow: 0 0 8px rgba(96,165,250,0.5); }
+  /* Bullets (scoped) */
+  .bulleted ul { list-style: none; padding-left: 0; }
+  .bulleted li { position: relative; padding-left: 22px; }
+  .bulleted li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--brand), var(--brand-2)); box-shadow: 0 0 8px rgba(96,165,250,0.5); }
 
   /* Accessibility */
   @media (prefers-reduced-motion: reduce) {
@@ -162,9 +162,14 @@ layout: null
   .btn.primary:hover { background: linear-gradient(90deg, rgba(96,165,250,0.5), rgba(167,139,250,0.5)); }
   .badges { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
   .badge { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--card-stroke); background: rgba(255,255,255,0.04); color: var(--muted); }
-  .orb {
-    width: 300px; height: 300px; margin: 0 auto; display: block;
-  }
+  /* Agent Mesh hero */
+  .mesh { width: 100%; max-width: 560px; margin: 0 auto; display: block; }
+  .mesh text { font-size: 10px; fill: #cbd5e1; letter-spacing: .2px; }
+  .mesh .node { filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+  .mesh .node circle { fill: rgba(17,24,39,0.85); stroke: rgba(255,255,255,0.15); stroke-width: 1; }
+  .mesh .node.active circle { stroke: rgba(96,165,250,0.9); }
+  .mesh .edge { stroke: rgba(255,255,255,0.18); stroke-width: 1; }
+  .mesh .pulse { stroke: url(#edgeGrad); stroke-width: 2; stroke-linecap: round; }
 
   .section-title { scroll-margin-top: 80px; }
   .contact-cta { text-align: center; }
@@ -185,12 +190,6 @@ layout: null
     animation: shimmer 6s ease-in-out infinite;
   }
   .hero { position: relative; overflow: hidden; }
-  .cursor-glow { position: absolute; top: 0; left: 0; width: 220px; height: 220px; border-radius: 50%; pointer-events: none; opacity: 0.0; mix-blend-mode: screen;
-    background: radial-gradient(closest-side, rgba(96,165,250,0.25), rgba(167,139,250,0.15) 40%, rgba(17,24,39,0.0) 75%);
-    transform: translate3d(-50%, -50%, 0);
-    transition: opacity .25s ease;
-  }
-  .hero:hover .cursor-glow { opacity: 1; }
 
   /* Project styling upgrades */
   .projects .project { position: relative; padding: 14px 16px 10px 18px; border: 1px solid var(--card-stroke); border-radius: 12px; margin: 14px 0; background: rgba(255,255,255,0.03); }
@@ -198,9 +197,20 @@ layout: null
   .projects .project:hover { box-shadow: 0 10px 24px rgba(0,0,0,0.28); transform: translateY(-1px); transition: box-shadow .25s ease, transform .25s ease; }
   .projects h3 { display: inline-block; padding-right: 8px; background-image: linear-gradient(90deg, rgba(96,165,250,0.35), rgba(167,139,250,0.35)); background-repeat: no-repeat; background-size: 100% 8px; background-position: 0 100%; border-radius: 4px; }
   .projects p strong { color: #cbd5e1; }
+  canvas.deploy-wave { width: 100%; height: 90px; display: block; margin-top: 8px; border-radius: 8px; border: 1px solid var(--card-stroke); background: rgba(255,255,255,0.02); }
+
+  /* PH capsule */
+  #ph .ph-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 12px; }
+  #ph .ph-tile { border: 1px solid var(--card-stroke); border-radius: 12px; padding: 10px; background: rgba(255,255,255,0.03); display: flex; flex-direction: column; gap: 6px; min-height: 140px; }
+  #ph .ph-title { font-weight: 600; font-size: 14px; color: #e5e7eb; }
+  #ph .ph-meta { color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; }
+  #ph .ph-ava { width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid var(--card-stroke); }
+  #ph .ph-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  #ph .ph-badge { font-size: 11px; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--card-stroke); background: rgba(255,255,255,0.04); color: var(--muted); }
+  #ph .ph-empty { color: var(--muted); font-size: 14px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .shimmer-text, .cursor-glow { animation: none !important; transition: none !important; }
+    .shimmer-text { animation: none !important; transition: none !important; }
   }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -227,7 +237,7 @@ layout: null
     <div class="hero-grid">
       <div class="hero-left">
         <div class="eyebrow">Agents • DataOps • ML Platforms</div>
-        <h1 class="shimmer-text">Building pragmatic AI and data platforms</h1>
+        <h1>Building pragmatic AI and data platforms</h1>
         <p class="lead">
           I build data teams and ship platforms that solve real problems: agentic systems, RAG pipelines, and production-ready ML. I focus on simple, reliable architectures that scale, with clear boundaries and strong observability.
         </p>
@@ -243,40 +253,67 @@ layout: null
         </div>
       </div>
       <div class="hero-right">
-        <svg class="orb" viewBox="0 0 300 300" aria-hidden="true" role="img">
+        <svg id="agent-mesh" class="mesh" viewBox="0 0 560 360" aria-hidden="true" role="img">
           <defs>
-            <radialGradient id="orbGrad" cx="30%" cy="30%" r="70%">
-              <stop offset="0%" stop-color="rgba(167,139,250,1)"/>
-              <stop offset="45%" stop-color="rgba(96,165,250,0.9)"/>
-              <stop offset="78%" stop-color="rgba(52,211,153,0.6)"/>
-              <stop offset="100%" stop-color="rgba(17,24,39,0.0)"/>
-            </radialGradient>
-            <filter id="liquid" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="2" seed="5" result="noise">
-                <animate attributeName="seed" from="5" to="95" dur="16s" repeatCount="indefinite"/>
-                <animate attributeName="baseFrequency" values="0.006;0.011;0.007;0.006" dur="18s" repeatCount="indefinite"/>
-              </feTurbulence>
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G">
-                <animate attributeName="scale" values="14;22;16;14" dur="20s" repeatCount="indefinite"/>
-              </feDisplacementMap>
-            </filter>
+            <linearGradient id="edgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(96,165,250,0.0)" />
+              <stop offset="50%" stop-color="rgba(167,139,250,0.9)" />
+              <stop offset="100%" stop-color="rgba(52,211,153,0.0)" />
+            </linearGradient>
           </defs>
-          <g filter="url(#liquid)">
-            <circle cx="150" cy="150" r="130" fill="url(#orbGrad)">
-              <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 150 150" to="360 150 150" dur="38s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="115" cy="115" r="38" fill="rgba(255,255,255,0.12)">
-              <animate attributeName="opacity" values="0.06;0.18;0.08;0.06" dur="12s" repeatCount="indefinite"/>
-            </circle>
+          <!-- Edges -->
+          <g id="edges" class="edges" stroke-linecap="round">
+            <path id="p1" class="edge" d="M120,180 L220,120"/>
+            <path id="p2" class="edge" d="M220,120 L320,120"/>
+            <path id="p3" class="edge" d="M320,120 L420,180"/>
+            <path id="p4" class="edge" d="M220,120 L220,60"/>
+            <path id="p5" class="edge" d="M320,120 L320,60"/>
+            <path id="p6" class="edge" d="M220,120 L260,200"/>
+            <path id="p7" class="edge" d="M320,120 L360,200"/>
+            <path id="p8" class="edge" d="M120,180 L180,260"/>
+            <path id="p9" class="edge" d="M420,180 L380,260"/>
+          </g>
+          <!-- Nodes -->
+          <g class="nodes">
+            <g class="node" transform="translate(110,170)">
+              <circle r="16"/><text x="24" y="4">Planner</text>
+            </g>
+            <g class="node" transform="translate(210,110)">
+              <circle r="16"/><text x="24" y="4">Retriever</text>
+            </g>
+            <g class="node" transform="translate(320,110)">
+              <circle r="16"/><text x="24" y="4">Grounder</text>
+            </g>
+            <g class="node" transform="translate(420,170)">
+              <circle r="16"/><text x="24" y="4">Answer</text>
+            </g>
+            <g class="node" transform="translate(220,60)">
+              <circle r="12"/><text x="20" y="4">Vector DB</text>
+            </g>
+            <g class="node" transform="translate(320,60)">
+              <circle r="12"/><text x="20" y="4">Docs/Code</text>
+            </g>
+            <g class="node" transform="translate(260,200)">
+              <circle r="12"/><text x="20" y="4">Tools</text>
+            </g>
+            <g class="node" transform="translate(360,200)">
+              <circle r="12"/><text x="20" y="4">Policy</text>
+            </g>
+            <g class="node" transform="translate(180,260)">
+              <circle r="12"/><text x="20" y="4">Memory</text>
+            </g>
+            <g class="node" transform="translate(380,260)">
+              <circle r="12"/><text x="20" y="4">Slack/API</text>
+            </g>
           </g>
         </svg>
       </div>
     </div>
-    <span class="cursor-glow" aria-hidden="true"></span>
+    
   </section>
 
   <h2 id="focus" class="articles-section section-title">What I focus on</h2>
-  <div class="articles-section card">
+  <div class="articles-section card bulleted">
     <ul>
       <li>Agentic systems: planning, tool-use, evaluation, and guardrails</li>
       <li>Retrieval-Augmented Generation: ingestion, chunking, embeddings, grounding, and attribution</li>
@@ -293,6 +330,7 @@ layout: null
         Multi-tenant support agent that blends Slack/Teams context, code, and docs with strict privacy. Thread-aware, source-attributed answers, configurable knowledge, and SOC2-ready posture.
       </p>
       <p><strong>Stack:</strong> LangChain/LangGraph, BAML, FastAPI, Next.js 14, LangSmith, DeepEval, LlamaIndex, Context7. Infra: PostgreSQL, Qdrant/Weaviate, Redis, MinIO/S3, Kubernetes, Terraform.</p>
+      <canvas class="deploy-wave" width="520" height="90" aria-hidden="true"></canvas>
     </div>
 
     <div class="project">
@@ -301,6 +339,7 @@ layout: null
         Internal Developer Platform to deploy client-specific modern data stacks in their cloud. Services include API Gateway, Config, Deployment, and Client management with secure defaults.
       </p>
       <p><strong>Stack:</strong> Docker Compose, PostgreSQL, Redis, JWT, Prometheus/Grafana, centralized logging, health checks, Trivy in CI/CD.</p>
+      <canvas class="deploy-wave" width="520" height="90" aria-hidden="true"></canvas>
     </div>
 
     <div class="project">
@@ -309,11 +348,12 @@ layout: null
         Autonomous ML platform that pairs LLM agents with robust data stacks. It performs automatic feature discovery, self-optimizing hyperparameter/architecture search, continuous drift detection, and performance tuning. System 3 integrates cleanly with LaunchData (provisioning/infra) and Alter (knowledge/agents) to move from data to decisions with minimal human glue.
       </p>
       <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
+      <canvas class="deploy-wave" width="520" height="90" aria-hidden="true"></canvas>
     </div>
   </div>
 
   <h2 id="core" class="articles-section section-title">Core analytics and data engineering</h2>
-  <div class="articles-section card">
+  <div class="articles-section card bulleted">
     <p><em>(Separate from platform projects)</em></p>
     <ul>
       <li><strong>Warehouses</strong>: Snowflake, PostgreSQL</li>
@@ -332,7 +372,7 @@ layout: null
   </div>
 
   <h2 id="teams" class="articles-section section-title">How I build data teams</h2>
-  <div class="articles-section card">
+  <div class="articles-section card bulleted">
     <ul>
       <li>Start with strong foundations: environments, CI/CD, observability, and clear data contracts</li>
       <li>Ship value early with thin vertical slices; expand safely via templates and guardrails</li>
@@ -349,6 +389,12 @@ layout: null
       <li><a href="https://medium.com/@donovanmaree/the-rise-of-the-full-stack-data-role-the-one-stop-solution-to-propel-your-data-stack-from-0-to-1-ae6c80591df2">The Rise of the Full Stack Data Role</a></li>
       <li><a href="https://medium.com/@donovanmaree/setting-up-virtual-environments-with-dbt-data-build-tool-on-mac-and-windows-3d62fec4aeb1">Setting up virtual environments with dbt</a></li>
     </ul>
+  </div>
+
+  <h2 id="producthunt" class="articles-section section-title">Product Hunt contributions</h2>
+  <div id="ph" class="articles-section card">
+    <div class="ph-grid" data-loading="true"></div>
+    <div class="ph-empty" aria-live="polite" style="display:none;">No contributions loaded.</div>
   </div>
 
   <div id="contact" class="articles-section card contact-cta">
@@ -372,26 +418,100 @@ layout: null
   <script>
     (function(){
       var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-
-      // Cursor-reactive glow inside hero (no parallax, pointer only)
-      var hero = document.querySelector('.hero');
-      var glow = document.querySelector('.cursor-glow');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (hero && glow && !reduce) {
-        var rafId = null, targetX = 0, targetY = 0, curX = 0, curY = 0;
-        hero.addEventListener('pointermove', function(e){
-          var rect = hero.getBoundingClientRect();
-          targetX = e.clientX - rect.left; targetY = e.clientY - rect.top;
-          if (!rafId) rafId = requestAnimationFrame(tick);
-        });
-        hero.addEventListener('pointerleave', function(){ glow.style.opacity = '0'; });
-        hero.addEventListener('pointerenter', function(){ glow.style.opacity = '1'; });
-        function tick(){
-          curX += (targetX - curX) * 0.18; curY += (targetY - curY) * 0.18;
-          glow.style.transform = 'translate3d(' + (curX) + 'px,' + (curY) + 'px,0) translate(-50%,-50%)';
-          rafId = (Math.abs(targetX - curX) > 0.5 || Math.abs(targetY - curY) > 0.5) ? requestAnimationFrame(tick) : null;
+
+      // Agent Mesh pulse runs
+      (function mesh(){
+        var svg = document.getElementById('agent-mesh'); if (!svg || reduce) return;
+        var steps = [ ['p1','p2','p3'], ['p1','p4','p2','p5','p3'], ['p1','p6','p2','p7','p3'] ];
+        var idx = 0;
+        function run(){
+          var seq = steps[idx % steps.length]; idx++;
+          var i = 0, circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+          circle.setAttribute('r','3'); circle.setAttribute('fill','#a78bfa'); svg.appendChild(circle);
+          function moveNext(){
+            if (i >= seq.length) { svg.removeChild(circle); setTimeout(run, 6000); return; }
+            var path = svg.querySelector('#'+seq[i++]); if (!path) { moveNext(); return; }
+            var len = path.getTotalLength(); var t=0;
+            function step(){ t += 2; if (t>len){ moveNext(); return; }
+              var p = path.getPointAtLength(t); circle.setAttribute('cx', p.x); circle.setAttribute('cy', p.y);
+              requestAnimationFrame(step);
+            }
+            step();
+          }
+          moveNext();
         }
-      }
+        setTimeout(run, 1200);
+      })();
+
+      // Deploy Wave per project
+      (function deploy(){
+        var canvases = document.querySelectorAll('canvas.deploy-wave'); if (!canvases.length) return;
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if (en.isIntersecting) { animate(en.target); io.unobserve(en.target); } });
+        }, { threshold: 0.4 });
+        canvases.forEach(function(cv){ io.observe(cv); });
+        function animate(cv){
+          var dpr = Math.max(1, window.devicePixelRatio||1); var w = cv.clientWidth, h = 90; cv.width = w*dpr; cv.height = h*dpr; var ctx = cv.getContext('2d'); ctx.scale(dpr,dpr);
+          var cols = Math.floor(w/18), rows = 4, cx = Math.floor(cols/2), cy = Math.floor(rows/2);
+          var built = {}, order=[]; for (var y=0;y<rows;y++){ for (var x=0;x<cols;x++){ var dist = Math.abs(x-cx)+Math.abs(y-cy); order.push({x:x,y:y,d:dist}); }}
+          order.sort(function(a,b){ return a.d-b.d; });
+          var t=0; function build(){
+            ctx.clearRect(0,0,w,h);
+            // draw grid
+            for (var y=0;y<rows;y++){
+              for (var x=0;x<cols;x++){
+                var key = x+','+y; var on = built[key];
+                ctx.fillStyle = on? 'rgba(167,139,250,0.35)':'rgba(255,255,255,0.05)';
+                ctx.fillRect(6+x*12, 10+y*16, 10, 10);
+              }
+            }
+            if (t < order.length){ var n = order[t++]; built[n.x+','+n.y]=true; requestAnimationFrame(build); }
+            else { telemetry(); }
+          }
+          function telemetry(){
+            var k=0; function loop(){
+              ctx.clearRect(0,0,w,h);
+              // grid background
+              for (var y=0;y<rows;y++){
+                for (var x=0;x<cols;x++){
+                  ctx.fillStyle = 'rgba(255,255,255,0.06)'; ctx.fillRect(6+x*12, 10+y*16, 10, 10);
+                }
+              }
+              // OTel lines
+              for (var i=0;i<3;i++){
+                var y = 80 - i*14; ctx.beginPath();
+                for (var x=0;x<w;x++){
+                  var amp = 2 + i; var v = Math.sin((x+k*2)/28 + i) * amp;
+                  var yy = y + v; if (x===0) ctx.moveTo(x,yy); else ctx.lineTo(x,yy);
+                }
+                ctx.strokeStyle = 'rgba(96,165,250,'+(0.25 - i*0.06)+')'; ctx.lineWidth = 1; ctx.stroke();
+              }
+              k++; if (!reduce) requestAnimationFrame(loop);
+            }
+            loop();
+          }
+          build();
+        }
+      })();
+
+      // Product Hunt capsule
+      (function ph(){
+        var wrap = document.querySelector('#ph .ph-grid'); if (!wrap) return;
+        fetch('assets/data/ph.json', { cache: 'no-store' }).then(function(r){ return r.json(); }).then(function(items){
+          wrap.innerHTML = '';
+          if (!items || !items.length){ document.querySelector('#ph .ph-empty').style.display='block'; return; }
+          items.slice(0,8).forEach(function(it){
+            var a = document.createElement('a'); a.href = it.url; a.target = '_blank'; a.rel='noopener'; a.className='ph-tile';
+            var img = document.createElement('div'); img.className='ph-ava'; img.style.backgroundImage = it.image?('url('+it.image+')'):''; img.style.backgroundSize='cover'; img.style.backgroundPosition='center';
+            var title = document.createElement('div'); title.className='ph-title'; title.textContent = it.title;
+            var meta = document.createElement('div'); meta.className='ph-meta'; meta.innerHTML = '<span>'+ (it.role||'') +'</span><span>▲ '+(it.upvotes||0)+'</span>';
+            var badges = document.createElement('div'); badges.className='ph-badges';
+            (it.badges||[]).slice(0,2).forEach(function(b){ var s=document.createElement('span'); s.className='ph-badge'; s.textContent=b; badges.appendChild(s); });
+            a.appendChild(img); a.appendChild(title); a.appendChild(meta); a.appendChild(badges); wrap.appendChild(a);
+          });
+        }).catch(function(){ document.querySelector('#ph .ph-empty').style.display='block'; });
+      })();
     })();
   </script>
 </body>
