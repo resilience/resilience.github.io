@@ -65,9 +65,28 @@ body {
 
     <h3>System 3 — Foundational ML Framework</h3>
     <p>
-      Ground-up rebuild around metadata-driven design. Eight clear subsystems (feature engineering, TiDE forecasting, probabilistic loss, adaptive learning, ensembles, AutoML, NAS, realtime serving) with explicit contracts and zero-fallback policy.
+      Autonomous ML platform that pairs LLM agents with robust data stacks. It performs automatic feature discovery, self-optimizing hyperparameter/architecture search, continuous drift detection, and performance tuning. System 3 integrates cleanly with LaunchData (provisioning/infra) and Alter (knowledge/agents) to move from data to decisions with minimal human glue.
     </p>
     <p><strong>Stack:</strong> Rust/Python via PyO3, MLflow, PostgreSQL, OpenTelemetry, Docker, GPU-aware orchestration.</p>
+  </div>
+
+  <h2 class="articles-section">Core analytics and data engineering</h2>
+  <div class="articles-section">
+    <p><em>(Separate from platform projects)</em></p>
+    <ul>
+      <li><strong>Warehouses</strong>: Snowflake, PostgreSQL</li>
+      <li><strong>Modeling</strong>: dbt (projects, tests, exposures, docs)</li>
+      <li><strong>Ingestion</strong>: Airbyte (open-source ops + connectors)</li>
+      <li><strong>Languages</strong>: Python, Rust, TypeScript</li>
+      <li><strong>ML</strong>: MLflow (tracking/registry), feature lineage, evaluation with DeepEval</li>
+      <li><strong>Observability</strong>: OpenTelemetry, Prometheus + Grafana, centralized structured logging</li>
+      <li><strong>Vector/Storage</strong>: Qdrant/Weaviate, S3/MinIO</li>
+      <li><strong>Services</strong>: FastAPI, JWT auth, Redis for caching</li>
+      <li><strong>BI/Analytics</strong>: Metabase, Looker, Tableau, Power BI, Mode, Mixpanel</li>
+      <li><strong>Data quality</strong>: Metaplane (ML-based data quality)</li>
+      <li><strong>Platform ops</strong>: Docker, Kubernetes, Terraform, CI/CD (GitHub Actions, Trivy security scans)</li>
+      <li><strong>Open-source data platforms</strong>: setup and infra for Airbyte, Metabase, dbt (configs, upgrades, monitoring)</li>
+    </ul>
   </div>
 
   <h2 class="articles-section">How I build data teams</h2>
