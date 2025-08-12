@@ -106,6 +106,28 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
     margin: 28px 0;
   }
+  /* Theme overrides (orderedlist/minimal) */
+  .wrapper { max-width: 1100px; padding: 0 24px; }
+  .sidebar { display: none; }
+  .page, .site { background: transparent !important; }
+
+  /* Motion + reveal */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+  .card { opacity: 0; animation: fadeUp .7s ease both; }
+  .card:nth-of-type(2) { animation-delay: .06s; }
+  .card:nth-of-type(3) { animation-delay: .12s; }
+  .card:nth-of-type(4) { animation-delay: .18s; }
+  .card:nth-of-type(5) { animation-delay: .24s; }
+
+  /* Bullets */
+  .articles-section ul { list-style: none; padding-left: 0; }
+  .articles-section li { position: relative; padding-left: 22px; }
+  .articles-section li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--brand), var(--brand-2)); box-shadow: 0 0 8px rgba(96,165,250,0.5); }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -130,7 +152,7 @@
   </div>
 
   <h2 class="articles-section">Project snapshots</h2>
-  <div class="articles-section">
+  <div class="articles-section card">
     <h3>Alter SaaS — LLM Support Agent (Enterprise)</h3>
     <p>
       Multi-tenant support agent that blends Slack/Teams context, code, and docs with strict privacy. Thread-aware, source-attributed answers, configurable knowledge, and SOC2-ready posture.
@@ -151,7 +173,7 @@
   </div>
 
   <h2 class="articles-section">Core analytics and data engineering</h2>
-  <div class="articles-section">
+  <div class="articles-section card">
     <p><em>(Separate from platform projects)</em></p>
     <ul>
       <li><strong>Warehouses</strong>: Snowflake, PostgreSQL</li>
@@ -170,7 +192,7 @@
   </div>
 
   <h2 class="articles-section">How I build data teams</h2>
-  <div class="articles-section">
+  <div class="articles-section card">
     <ul>
       <li>Start with strong foundations: environments, CI/CD, observability, and clear data contracts</li>
       <li>Ship value early with thin vertical slices; expand safely via templates and guardrails</li>
@@ -180,7 +202,7 @@
   </div>
 
   <h2 class="articles-section">Selected writing</h2>
-  <div class="articles-section">
+  <div class="articles-section card">
     <ul>
       <li><a href="https://medium.com/@donovanmaree/8-strategies-for-chief-data-officers-to-leverage-chatgpt-4f5c664b10ac">8 Strategies for Chief Data Officers to leverage ChatGPT</a></li>
       <li><a href="https://medium.com/@donovanmaree/a-data-team-code-review-practitioners-guide-88abf3720cc1">A Data Team Code Review Practitioner’s Guide</a></li>
